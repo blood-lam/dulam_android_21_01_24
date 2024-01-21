@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.movie_detail.MovieDetailsFragment">
+
+    <ImageView
+        android:id="@+id/detail_movie_poster"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/movie_poster"
+        app:layout_constraintBottom_toTopOf="@+id/warp_detail_movie_overview"
+        app:layout_constraintEnd_toStartOf="@+id/detail_movie_point"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/detail_movie_point"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/detail_movie_poster"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/detail_movie_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="Title"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/detail_movie_genres"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Genres"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black" />
+
+        <RatingBar
+            android:id="@+id/detail_movie_rate"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:clickable="false"
+            android:indeterminateDrawable="@android:drawable/btn_star_big_off"
+            android:isIndicator="true"
+            android:maxHeight="32dp"
+            android:minHeight="32dp"
+            android:numStars="5"
+            android:progressDrawable="@android:drawable/btn_star_big_on"
+            android:stepSize="0.1" />
+
+        <TextView
+            android:id="@+id/detail_movie_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="4dp"
+            android:text="Language"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/detail_movie_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Release data"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/black" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/warp_detail_movie_overview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail_movie_poster">
+
+        <TextView
+            android:id="@+id/detail_movie_overview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start |top"
+            android:layout_margin="16dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/detail_movie_overview_expand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end | bottom"
+            android:layout_marginStart="@dimen/cardview_compat_inset_shadow"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="20dp"
+            android:height="16dp"
+            android:background="@color/white"
+            android:visibility="gone"
+            android:text="@string/expand_text"
+            android:textColor="@android:color/holo_blue_light" />
+
+    </FrameLayout>
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/movie_detail_tab_group"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/warp_detail_movie_overview">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/movie_detail_tabs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:tabMode="fixed" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/movie_detail_view_pager"
+            android:layout_width="match_parent"
+            android:paddingStart="16dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

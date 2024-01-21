@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_discover">
+
+    <fragment
+        android:id="@+id/navigation_discover"
+        android:name="com.lamdx.smartmovie.ui.discover.DiscoverFragment"
+        tools:layout="@layout/fragment_discover" />
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.lamdx.smartmovie.ui.search.SearchFragment"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/navigation_genres"
+        android:name="com.lamdx.smartmovie.ui.genres.GenresFragment"
+        tools:layout="@layout/fragment_genres" />
+
+    <fragment
+        android:id="@+id/navigation_artists"
+        android:name="com.lamdx.smartmovie.ui.artists.ArtistsFragment"
+        tools:layout="@layout/fragment_artists" />
+
+    <fragment
+        android:id="@+id/navigation_details"
+        android:name="com.lamdx.smartmovie.ui.movie_detail.MovieDetailsFragment"
+        tools:layout="@layout/fragment_movie_details" />
+</navigation>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/toolbar_view_mode"
+        android:icon="@drawable/view_content_24"
+        app:showAsAction="ifRoom"
+        android:title="Detail Mode"
+        android:visible="true"/>
+    <item
+        android:id="@+id/toolbar_search_symbol"
+        android:icon="@drawable/baseline_search_24"
+        app:showAsAction="ifRoom"
+        android:title="Search"
+        android:visible="false"/>
+</menu>
